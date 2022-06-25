@@ -1,2 +1,2 @@
 # 9knowledge
-My knowledge about 9front (a Plan 9 fork).
+My notes about 9front (a Plan 9 fork).
