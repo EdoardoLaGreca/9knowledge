@@ -27,3 +27,7 @@
  - [Homepage](https://p9f.org/)
  - [Papers](https://p9f.org/sys/doc/)
  - [Plan 9 release images and sources](https://p9f.org/dl/)
+
+## Other websites
+
+ - ["Plan 9: The Way the Future Was"](http://www.catb.org/esr/writings/taoup/html/plan9.html)
