@@ -31,3 +31,4 @@
 ## Other websites
 
  - ["Plan 9: The Way the Future Was"](http://www.catb.org/esr/writings/taoup/html/plan9.html)
+ - [9legacy](http://9legacy.org/)
