@@ -22,11 +22,12 @@
  - [Read a paper: Plan 9](https://www.youtube.com/watch?v=Mr-ilxxWAcQ)
  - [FOSDEM 2006 plan9](https://www.youtube.com/watch?v=VJSlvoUFkBA)
 
-## Plan 9 Foundation
+## Plan 9 Foundation and 9p.io
 
  - [Homepage](https://p9f.org/)
  - [Papers](https://p9f.org/sys/doc/)
- - [Plan 9 release images and sources](https://p9f.org/dl/)
+ - [Plan 9 historical release images and sources](https://p9f.org/dl/)
+ - [Plan 9 4th edition images](http://9p.io/plan9/download.html)
 
 ## Other websites
 
