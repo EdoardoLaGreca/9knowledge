@@ -26,6 +26,7 @@
 
  - [Homepage](https://p9f.org/)
  - [Papers](https://p9f.org/sys/doc/)
+	- ["Plan 9 from Bell Labs"](https://p9f.org/sys/doc/9.html)
  - [Plan 9 historical release images and sources](https://p9f.org/dl/)
  - [Plan 9 4th edition images](http://9p.io/plan9/download.html)
 
