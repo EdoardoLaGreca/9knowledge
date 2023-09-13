@@ -2,7 +2,7 @@
 
 <img src="img/plan9bunnyblack.jpg" width="30%"/>
 
-My notes about Plan 9 and [9front](http://9front.org) (a Plan 9 fork).
+My notes about Plan 9 4th edition.
 
 ## What?
 

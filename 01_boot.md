@@ -1,10 +1,10 @@
-# tinkering
+# 01: boot
 
 ## Booting Plan 9 on QEMU
 
 If you'd like to try Plan 9 using QEMU, use the script in s/virt9.sh to run it.
 
-The scripts requires two arguments: the path to the **ISO file** (see [links.md](links.md) for the download link) and the path to the **QEMU disk image**. It is recommended a **30 GB** qcow2 image for disk and the original Plan 4 4th edition, instead of a fork (e.g. 9front), for an original experience.
+virt9.sh requires two arguments: the path to the **ISO file** (see [links.md](links.md) for the download link) and the path to the **QEMU disk image**. It is recommended a **30 GB** qcow2 image for disk and the original Plan 9 4th edition, instead of a fork (e.g. 9front), for an original experience.
 
 ```
 ./s/virt9.sh <iso> <disk>
@@ -58,6 +58,12 @@ user=<user>
 and replace `<root>` with the desired default root path (if you don't know it, write the one suggested on boot) and `<user>` with the default user (`glenda`, if you didn't create any other user). You can get a list of existing users with `lc /usr`.
 
 Once you wrote the lines, middle-click (click with the mouse wheel) on "Put" and then on "Exit".
+
+## Start-up programs
+
+If you'd like your Plan 9 system to auto-magically run programs on system start-up (i.e. right after boot and log-in), here is what you need to do.
+
+
 
 ## Troubleshooting
 
