@@ -36,3 +36,6 @@
 - [9legacy](http://9legacy.org/)
 - ["Plan 9: An Operating System Decades Ahead of Its Time" on Linkedin](https://www.linkedin.com/pulse/plan-9-operating-system-decades-ahead-its-time-anastasios-papalias)
 - [r/plan9 on Reddit](https://www.reddit.com/r/plan9)
+- ["Linux Namespaces Are a Poor Man's Plan 9 Namespaces"](https://yotam.net/posts/linux-namespaces-are-a-poor-mans-plan9-namespaces/)
+- [Plan9Tutorial from MagmaSoft](https://at.magma-soft.at/magma.com.ni/sw/wiki/Plan9Tutorial/)
+- ["The Plan-9 Effect or why you should not fix it if it ain't broken"](http://groups.di.unipi.it/~nids/docs/the_plan-9_effect.html)
