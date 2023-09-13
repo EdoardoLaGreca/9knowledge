@@ -35,3 +35,4 @@
 - ["Plan 9: The Way the Future Was"](http://www.catb.org/esr/writings/taoup/html/plan9.html)
 - [9legacy](http://9legacy.org/)
 - ["Plan 9: An Operating System Decades Ahead of Its Time" on Linkedin](https://www.linkedin.com/pulse/plan-9-operating-system-decades-ahead-its-time-anastasios-papalias)
+- [r/plan9 on Reddit](https://www.reddit.com/r/plan9)
