@@ -2,13 +2,7 @@
 
 ## Booting Plan 9 on QEMU
 
-If you'd like to try Plan 9 using QEMU, use the script in s/virt9.sh to run it.
-
-virt9.sh requires two arguments: the path to the **ISO file** (see [links.md](links.md) for the download link) and the path to the **QEMU disk image**. It is recommended a **30 GB** qcow2 image for disk and the original Plan 9 4th edition, instead of a fork (e.g. 9front), for an original experience.
-
-```
-./s/virt9.sh <iso> <disk>
-```
+You can virtualize a Plan 9 installation from a QEMU disk image using s/virt9.sh as in [00_installation.md](00_installation.md), without specifying the ISO image path.
 
 If you run into errors, [this](http://fqa.9front.org/fqa3.html#3.3.1) can help.
 
