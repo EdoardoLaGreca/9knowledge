@@ -32,6 +32,8 @@ When booting the first time, the only existing user is **glenda**, which is the 
 
 Pressing Enter without typing a user will result in a few errors and Rio won't start automatically.
 
+![welcome screen](img/welcome_glenda.png)
+
 ### Setting default root and user
 
 If the two boot prompts bother you, you can edit the [plan9.ini](https://p9f.org/magic/man2html/8/plan9.ini) file located in the 9fat partition. To do so, type the commands below.
