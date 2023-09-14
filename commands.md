@@ -1,4 +1,4 @@
-# useful day-to-day commands
+# Useful day-to-day commands
 
 ## System management
 

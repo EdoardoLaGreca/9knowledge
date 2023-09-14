@@ -1,4 +1,4 @@
-# links
+# Links
 
 ## 9front.org
 
