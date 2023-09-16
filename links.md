@@ -30,8 +30,9 @@
 - [Plan 9 historical release images and sources](https://p9f.org/dl/)
 - [Plan 9 4th edition images](http://9p.io/plan9/download.html)
 
-## Other websites
+## Articles and other websites
 
+- ["Basics of the Unix Philosophy"](http://www.catb.org/esr/writings/taoup/html/ch01s06.html)
 - ["Plan 9: The Way the Future Was"](http://www.catb.org/esr/writings/taoup/html/plan9.html)
 - [9legacy](http://9legacy.org/)
 - ["Plan 9: An Operating System Decades Ahead of Its Time" on Linkedin](https://www.linkedin.com/pulse/plan-9-operating-system-decades-ahead-its-time-anastasios-papalias)
@@ -39,3 +40,5 @@
 - ["Linux Namespaces Are a Poor Man's Plan 9 Namespaces"](https://yotam.net/posts/linux-namespaces-are-a-poor-mans-plan9-namespaces/)
 - [Plan9Tutorial from MagmaSoft](https://at.magma-soft.at/magma.com.ni/sw/wiki/Plan9Tutorial/)
 - ["The Plan-9 Effect or why you should not fix it if it ain't broken"](http://groups.di.unipi.it/~nids/docs/the_plan-9_effect.html)
+- ["Plan 9" by Permacomputing](https://permacomputing.net/Plan_9/)
+- ["Plan 9 is a fully-featured, clean, compact and uniform operating system built as a successor to Unix."](https://wiki.xxiivv.com/site/plan9.html)
