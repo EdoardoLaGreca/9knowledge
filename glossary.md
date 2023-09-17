@@ -6,7 +6,7 @@
 
 **Auth server**: A computer running Plan 9, whose purpose is to manage authentication for an entire Plan 9 network. It runs on a disk-less machine and performs no other functions, to reduce the danger of a potential security breach. However, to enable remote access, the auth server is usually also configured as a cpu server.
 
-**Bind**: [TODO]
+**Bind**: Remap a QID (file/directory ID) through a command of the same name. In other words, it modifies the current name space so that one file or directory appears joined with another file or directory under the path of one of the two.
 
 **CPU server**: A computer running Plan 9, whose purpose is to serve its resources for remote computation. Programs in CPU servers run in isolation.
 
@@ -30,7 +30,7 @@
 
 **Kernel**: The *core* of an operating system. It manages the essential aspects of an operating system and provides interfaces to communicate with the hardware it is running on.
 
-**Mount**: [TODO]
+**Mount**: An operation that, through a command of the same name, connects the current name space to a 9P server. The `unmount` commands does the opposite.
 
 **Mouse chording**: The act of clicking or holding down multiple mouse buttons to perform an action.
 
