@@ -42,3 +42,4 @@
 - ["The Plan-9 Effect or why you should not fix it if it ain't broken"](http://groups.di.unipi.it/~nids/docs/the_plan-9_effect.html)
 - ["Plan 9" by Permacomputing](https://permacomputing.net/Plan_9/)
 - ["Plan 9 is a fully-featured, clean, compact and uniform operating system built as a successor to Unix."](https://wiki.xxiivv.com/site/plan9.html)
+- [Plan 9 desktop guide](https://pspodcasting.net/dan/blog/2019/plan9_desktop.html)
