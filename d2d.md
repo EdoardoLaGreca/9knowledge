@@ -26,7 +26,7 @@ Pressing Control-D in Rio generates an EOT character, which is like a newline, b
 
 [What are name spaces?](namespaces.md)
 
-Common mount points for file trees, unless manually specified:
+Common mount points for file servers, unless manually specified:
 
 - `/n`
 - `/srv`
