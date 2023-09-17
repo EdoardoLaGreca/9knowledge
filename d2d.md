@@ -26,10 +26,10 @@ Pressing Control-D in Rio generates an EOT character, which is like a newline, b
 
 [What are name spaces?](namespaces.md)
 
-Common mount points for file servers, unless manually specified:
+Common mount points for file servers, unless manually specified, are in:
 
-- `/n`
-- `/srv`
-- `/mnt`
+- `/n` (for file trees imported from remote systems)
+- `/srv` (just an empty unwritable directory that acts as place holder for mounted services)
+- `/mnt` (for applications)
 
 Plan 9 provides a default name space to processes as soon as they spawn.
