@@ -1,6 +1,8 @@
 # 9knowledge
 
-<img src="img/plan9bunnyblack.jpg" width="30%"/>
+<img src="img/plan9bunnyblack.jpg" width="30%" />
+<br/>
+<img src="img/9frontsystem.jpg" width="30%" />
 
 My notes about [9front](http://9front.org/).
 
