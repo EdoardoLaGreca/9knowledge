@@ -17,3 +17,18 @@ user=<user>
 ```
 
 where `<value>` is the root file system of choice and `<user>` is the default login user.
+
+## Changing the monitor size
+
+```
+9fs 9fat
+acme /n/9fat/plan9.ini
+```
+
+and add or change
+
+```
+vgasize=<width>x<height>x<depth>
+```
+
+where `<width>`, `<height>`, and `<depth>` are the desired width, height, and depth.
