@@ -1,6 +1,6 @@
 # Glossary of Plan 9
 
-**9front**: A fork of Plan 9 from Bell Labs that includes many patches and bug fixes. Kindly brought you by the 9front contributors.
+**9front**: A fork of Plan 9 from Bell Labs that includes many patches and bug fixes. Kindly brought you by the [9front contributors](https://fqa.9front.org/fqa1.html#1.6).
 
 **9P**: The Plan 9's file system protocol. It allows to share file systems between Plan 9 machines. Ports to Unix exist too.
 
