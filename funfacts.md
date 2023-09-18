@@ -5,3 +5,4 @@
 - 9P, the Plan 9 filesystem protocol, is widely in use today. Examples include, but are not limited to: NixOS, GNU Guix, Windows Subsystem for Linux, and QEMU.
 - Linux implements Plan 9-like namespaces (see [links.md](links.md)).
 - GCC implements some of the features present in the Plan 9 C dialect, like [unnamed sub-structures](https://p9f.org/sys/doc/compiler.html).
+- In Plan 9, all characters missing from the font render as [tiny pjw faces](https://spinroot.com/pico/pjw.html).
