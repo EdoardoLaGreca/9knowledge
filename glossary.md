@@ -18,7 +18,7 @@
 
 **File**: A textual interface. It allows programs to communicate with each other, with operations as simple as writing and reading disk data. Not all files present in the file system are stored in the disk.
 
-**File server**: A computer running Plan 9, whose purpose is to serve (i.e. make available) its files to other computers on the same network. A traditional Plan 9 grid only contains one file server. In 9front, the same computer that functions as a file server, is also a CPU server.
+**File server**: A computer running Plan 9, whose purpose is to serve (i.e. make available) its files to other computers on the same network. A traditional Plan 9 grid only contains one file server. In 9front, the same computer that functions as a file server, is also a CPU server. Some programs--including Plan 9's kernel--take the form of file servers, since they serve a file tree in the current name space which other programs can use to communicate.
 
 **File system**: A set of files and directories organized as a tree, in which directories are internal nodes and files are leaf nodes. Often shortened as "fs".
 
