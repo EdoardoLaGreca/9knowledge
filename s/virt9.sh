@@ -1,5 +1,7 @@
 #! /bin/sh
 
+# you may want to assign these two variables below to known paths in your
+# filesystem, to save some time and effort
 disk=$1
 iso=$2
 
@@ -14,6 +16,5 @@ qemu-system-x86_64 \
 	$isoargs \
 	-k en-us \
 	-usb \
-	-netdev user,id=net0 -device e1000,netdev=net0,mac=52:54:98:76:54:32 \
-	-nic user,model=e1000,mac=52:54:98:76:54:32 \
+	-net nic,model=virtio,macaddr=00:20:91:37:33:77 -net user \
 	-vga virtio \
