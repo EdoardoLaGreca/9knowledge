@@ -17,4 +17,5 @@ qemu-system-x86_64 \
 	-k en-us \
 	-usb \
 	-net nic,model=virtio,macaddr=00:20:91:37:33:77 -net user \
+	-net user,hostfwd=tcp::17019-:17019 \
 	-vga virtio \
