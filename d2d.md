@@ -23,7 +23,9 @@ Pressing Control-D in Rio generates an EOT character, which is like a newline, b
 ## File system
 
 - [`file`](https://man.9front.org/1/file) - classify file
-- [`bind` and `mount`](https://man.9front.org/1/bind) - modify the name space of the current process
+- [`bind`](https://man.9front.org/1/bind) - bind a source file to a destination file, so that the destination is an alias for the source
+- [`mount`](https://man.9front.org/1/bind) - mount (i.e. "attach") the contents of a directory tree to another directory tree
+- [`unmount`](https://man.9front.org/1/bind) - undo bind or mount
 - [`9fs`](https://man.9front.org/4/srv) - dial a machine and mount its file system
 - [`ns`](https://man.9front.org/1/ns) - represent the name spaces of a process
 - [`rcpu`](https://man.9front.org/1/rcpu) - connect to a CPU server and start a shell on it
