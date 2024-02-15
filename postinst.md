@@ -32,3 +32,5 @@ vgasize=<width>x<height>x<depth>
 ```
 
 where `<width>`, `<height>`, and `<depth>` are the desired width, height, and depth.
+
+Not all widths, heights, and depths are allowed. You can find all valid VESA modes [here](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions#Modes_defined_by_VESA), along with other common modes.
