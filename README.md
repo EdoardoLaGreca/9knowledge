@@ -19,3 +19,11 @@ Although we could say that Plan 9 quietly--yet successfully--influenced modern c
 I'm maintaining this repository with useful resources and links so that other people can learn more about Plan 9 and waste less time than I did.
 
 ![](img/what.jpg)
+
+## Where do I start?
+
+If you have little to no experience with Plan 9 and 9front, start by getting familiar with Plan 9's [glossary](glossary.md). Then use [this](d2d.md) for day-to-day operations.
+
+Also check [this](postinst.md) out for a bunch of stuff you may want to do after a clean installation of 9front.
+
+I also keep track of interesting and useful [links](links.md).
