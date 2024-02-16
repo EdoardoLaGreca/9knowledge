@@ -27,3 +27,5 @@ If you have little to no experience with Plan 9 and 9front, start by getting fam
 Also check [this](postinst.md) out for a bunch of stuff you may want to do after a clean installation of 9front.
 
 I also keep track of interesting and useful [links](links.md).
+
+And remember that the most effective way of learning Plan 9 is to gain experience. Feel it in your hands and experiment with it.
