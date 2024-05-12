@@ -13,13 +13,13 @@ iso=$2
 
 if [ $# -eq 0 ]
 then
-	echo 'usage: ./virt9.sh disk-image.img [ cd-image.iso ]'
+	echo 'usage: ./virt9.sh disk-image.img [ cd-image.iso ]' >&2
 	exit 1
 fi
 
 if [ -n "$iso" ]
 then
-	cdrom="-cdrom $iso"
+	cdrom="-cdrom $iso -boot dc"
 fi
 
 
@@ -53,8 +53,7 @@ qemu-system-x86_64 \
 	-m 2048M \
 	-hda $disk \
 	$cdrom \
-	-boot dc \
 	-vga std \
 	-k en-us \
-	-netdev user,id=eth0 -device e1000,netdev=eth0 \
+	-netdev user,id=eth0,net=192.168.9.0/24,dhcpstart=192.168.9.1 -device driver=virtio-net,netdev=eth0 \
 #	-device virtio-net,netdev=vmnic -netdev tap,id=vmnic,ifname=vnet0,script=no,downscript=no \
