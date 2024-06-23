@@ -6,6 +6,8 @@
 
 My notes about [9front](http://9front.org/).
 
+**Warning**: All code and commands shown in this repository are supposed to run on 9front, not on the original Plan 9 operating system.
+
 ## What?
 
 [Plan 9 from Bell Labs](https://p9f.org/about.html) (or "Plan 9", for short) is an awesome research operating system which demonstrates how most of the software we use today is over-complicated and over-engineered.
