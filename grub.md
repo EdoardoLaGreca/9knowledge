@@ -12,7 +12,7 @@ menuentry "9front" {
 }
 ```
 
-You may need to adjust the line `set root=(...)` with the disk and partition where your 9front installation resides. In order to find the correct disk and partition, it is advised the use of the EFI shell. For this purpose, `map`, `cd`, and `ls` are useful EFI shell commands.
+Make sure to adjust the line `set root=(...)` with the disk and partition where your 9front installation resides. In order to find the correct disk and partition, you can use the EFI shell. For this purpose, `map`, `cd`, and `ls` are useful EFI shell commands.
 
 After writing the entry, remember to save the file and run
 
