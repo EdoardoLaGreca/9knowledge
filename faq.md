@@ -17,3 +17,8 @@ There is a list [here](https://9front.org/who/).
 ## Where do I begin to learn Plan 9 and 9front?
 
 There is no official method for that. You should use the method that is the most suitable for you, which is one that lets you learn the most, with the least effort and time. If you don't know where to start, I suggest reading [9front's FQA](https://fqa.9front.org/) (except the chapter about hardware, unless you're interested).
+
+## How do I install a Unix-like operating system (Linux, *BSD, etc.) and 9front in dual-boot?
+
+If you're using GRUB 2, good news! You can find the guide in [grub.md](grub.md).
+
