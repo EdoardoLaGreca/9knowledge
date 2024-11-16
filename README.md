@@ -24,5 +24,5 @@ I'm maintaining this repository with useful resources and links so that other pe
 
 ## Where do I start?
 
-If you have little to no experience with Plan 9 and 9front, start by getting familiar with Plan 9's [glossary](glossary.md). Then use [d2d.md](d2d.md) for day-to-day operations. Have a look at [postinst.md](postinst.md) for a bunch of stuff you may want to do after a clean installation of 9front. I also keep track of interesting and useful links in [links.md](links.md). Remember that the most effective way of learning Plan 9 is to get your hands dirty.
+If you have little to no experience with Plan 9 and 9front, start by getting familiar with Plan 9's [glossary](glossary.md). Then use [d2d.md](d2d.md) for the most common operations. Have a look at [postinst.md](postinst.md) for a bunch of stuff you may want to do after a clean installation of 9front. I also keep track of interesting and useful links in [links.md](links.md). Remember that the most effective way of learning 9front is to use it as much as you can.
 
