@@ -5,10 +5,10 @@
 dom='9front.org'
 dldom='iso.only9fans.com'
 
-which curl >/dev/null
-if [ $? -eq 127 ]
+curl -V >/dev/null 2>&1
+if [ $? -ne 0 ]
 then
-	echo 'cannot run curl :(' >&2
+	echo 'no curl :(' >&2
 	exit 1
 fi
 
