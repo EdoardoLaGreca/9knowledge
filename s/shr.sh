@@ -25,3 +25,17 @@ xtract() {
 	done
 }
 
+# find all matches in a web page
+matchall() {
+	p="$1"
+	m="$2"
+	curl "$p" | xtract "$m"
+}
+
+# find the first match in a web page
+match() {
+	p="$1"
+	m="$2"
+	matchall "$p" "$m" | head -n 1
+}
+
