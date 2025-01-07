@@ -44,3 +44,5 @@
 - ["Plan 9 is a fully-featured, clean, compact and uniform operating system built as a successor to Unix."](https://wiki.xxiivv.com/site/plan9.html)
 - [Plan 9 desktop guide](https://pspodcasting.net/dan/blog/2019/plan9_desktop.html)
 - [Introduction to OS Abstractions using Plan 9 from Bell Labs [PDF]](http://plan9.stanleylieber.com/_books/comp/plan9/Introduction.To.OS.Abstractions.Using.Plan.9.From.Bell.Labs.draft.2007.pdf)
+- [chötrin's notes on Plan 9](https://chotrin.org/notes/plan9.html)
+
