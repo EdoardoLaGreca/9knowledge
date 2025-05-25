@@ -12,13 +12,9 @@ menuentry "9front" {
 }
 ```
 
-Make sure to adjust the line `set root=(...)` with the disk and partition where your 9front installation resides. In order to find the correct disk and partition, you can use the EFI shell. For this purpose, `map`, `cd`, and `ls` are useful EFI shell commands.
+Make sure to adjust the line `set root=(...)` with the disk and partition where your 9front bootloader resides. In order to find the correct disk and partition, you can use the EFI shell. For this purpose, `map`, `cd`, and `ls` are useful EFI shell commands.
 
-After writing the entry, remember to save the file and run
-
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-```
+After writing the entry, remember to save the file and run the `update-grub` command as root.
 
 ## BIOS
 
