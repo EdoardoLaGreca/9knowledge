@@ -6,6 +6,8 @@
 
 ckcurl
 
+echo "searching for the file's url... (might take a while)"
+
 path=$(match "https://$dldom" "/9front/9front-[[:digit:]]*.amd64.iso.gz")
 if [ -z "$path" ]
 then

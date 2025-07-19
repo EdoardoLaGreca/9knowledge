@@ -6,6 +6,8 @@
 
 ckcurl
 
+echo "searching for the file's url... (might take a while)"
+
 # latest download page link
 plink=$(match "https://$dom" "http://$dom/releases/[[:digit:]/]*" | sed 's/^http:/https:/')
 if [ -z "$plink" ]
