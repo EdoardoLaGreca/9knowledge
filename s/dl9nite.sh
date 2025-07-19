@@ -13,5 +13,5 @@ then
 	exit 1
 fi
 
-curl -O "https://$dldom""$path"
+curldl "https://$dldom""$path"
 

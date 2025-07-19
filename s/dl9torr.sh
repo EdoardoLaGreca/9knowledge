@@ -22,5 +22,5 @@ then
 	exit 1
 fi
 
-curl -O "$dlink"
+curldl "$dlink"
 

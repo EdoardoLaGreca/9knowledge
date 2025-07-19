@@ -12,6 +12,19 @@ ckcurl() {
 	fi
 }
 
+# silent curl wrapper
+curls() {
+	args='-Ss'
+	curl $args "$@"
+}
+
+# explicit curl wrapper, for final downloads
+curldl() {
+	wstring='download completed!\n\thost: %{urle.host}\n\tpath: %{urle.path}\n\ttime: %{time_total} seconds\n\tavg speed: %{speed_download} B/s\n\texit status: %{exitcode}\n\terror msg: %{errormsg}\n'
+	args="-O"
+	curl $args -w "$wstring" "$@"
+}
+
 # like grep -o but posix-compliant
 xtract() {
 	patt="$1"
@@ -29,7 +42,7 @@ xtract() {
 matchall() {
 	p="$1"
 	m="$2"
-	curl "$p" | xtract "$m"
+	curls "$p" | xtract "$m"
 }
 
 # find the first match in a web page
