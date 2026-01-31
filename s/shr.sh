@@ -1,7 +1,6 @@
 # Shared functions and variables.
 
 dom='9front.org'
-dldom='iso.only9fans.com'
 
 ckcurl() {
 	curl -V >/dev/null 2>&1

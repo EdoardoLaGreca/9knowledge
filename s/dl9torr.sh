@@ -2,6 +2,12 @@
 
 # Download the latest 9front release torrent file using Curl.
 
+# Path where the download page is
+ppath='/releases'
+
+# Path for direct download
+dpath='/iso'
+
 . $(dirname $0)/shr.sh
 
 ckcurl

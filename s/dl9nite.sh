@@ -2,6 +2,15 @@
 
 # Download the latest 9front nightly build.
 
+# Domain for direct download of nightly builds
+nitedom='iso.only9fans.com'
+
+# Path for direct download
+dpath='/9front'
+
+# Download page URL for nightly builds
+purl="https://$nitedom/"
+
 . $(dirname $0)/shr.sh
 
 ckcurl
