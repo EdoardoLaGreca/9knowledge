@@ -29,7 +29,7 @@ xtract() {
 	patt="$1"
 	while read line
 	do
-		echo "$line" | grep -q "$patt" || continue
+		echo "$line" | grep -Eq "$patt" || continue
 		befaft=$(echo "$line" | sed "s|$patt|\n|")
 		bef=$(echo "$befaft" | head -n 1)
 		aft=$(echo "$befaft" | tail -n 1)
