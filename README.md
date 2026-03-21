@@ -6,7 +6,9 @@
 
 My notes about [9front](http://9front.org/).
 
-**Warning**: All code and commands shown in this repository are supposed to run on 9front, not on the original Plan 9 operating system.
+**Warning**: All instances of the name "Plan 9", unless otherwise explicitly stated, refer to the set of founding concepts and ideas introduced and suggested by Plan 9 from Bell Labs, 4th edition and thus inherited by 9front. In other words, the name "Plan 9" refers to the common ground between Plan 9 from Bell Labs 4th ed. and 9front, and not to the additional features on top of those, usually exclusive to one or the other.
+
+Despite the warning above, this repository still covers 9front as the preferred "Plan 9 feature set extension" (improperly called so).
 
 ## What?
 
