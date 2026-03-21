@@ -25,5 +25,6 @@ then
 fi
 
 echo "url: $url"
+ckow $(basename $url) || exit 0
 curldl "$url"
 

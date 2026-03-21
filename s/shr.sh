@@ -51,3 +51,16 @@ match() {
 	matchall "$p" "$m" | head -n 1
 }
 
+# check whether a file (path) already exists, prompt for overwrite
+ckow() {
+	p="$1"
+	while test -f $p && read -p "!! file already exists, overwrite? [y/n] " r
+	do
+		case $r in
+		Y*|y*) return 0 ;;
+		N*|n*) return 1 ;;
+		*) continue ;;
+		esac
+	done
+}
+

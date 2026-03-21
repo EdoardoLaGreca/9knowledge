@@ -31,5 +31,6 @@ then
 fi
 
 echo "url: $durl"
+ckow $(basename $durl) || exit 0
 curldl "$durl"
 
