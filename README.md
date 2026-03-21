@@ -10,6 +10,8 @@ My notes about [9front](http://9front.org/).
 
 Despite the warning above, this repository still covers 9front as the preferred "Plan 9 feature set extension" (improperly called so).
 
+**Disclaimer**: Neither me, nor any portion of text present in this repository, is responsible for loss of information, system malfunction or breakage, or physical harm to your computer in any way. The end user is always supposed to be careful and take responsibility for operating their own computer!
+
 ## What?
 
 [Plan 9 from Bell Labs](https://p9f.org/about.html) (or "Plan 9", for short) is an awesome research operating system which demonstrates how most of the software we use today is over-complicated and over-engineered.
