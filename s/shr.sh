@@ -19,8 +19,8 @@ curls() {
 
 # explicit curl wrapper, for final downloads
 curldl() {
-	wstring='download completed!\n\thost: %{urle.host}\n\tpath: %{urle.path}\n\ttime: %{time_total} seconds\n\tavg speed: %{speed_download} B/s\n\texit status: %{exitcode}\n\terror msg: %{errormsg}\n'
-	args="-O"
+	wstring='download completed!\n  size: %{size_download} B\n  time: %{time_total} seconds\n  avg speed: %{speed_download} B/s\n  exit status: %{exitcode}\n  error msg (none if blank): %{errormsg}\n'
+	args="--remove-on-error -O"
 	curl $args -w "$wstring" "$@"
 }
 

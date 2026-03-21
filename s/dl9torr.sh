@@ -30,5 +30,6 @@ then
 	exit 1
 fi
 
+echo "url: $durl"
 curldl "$durl"
 

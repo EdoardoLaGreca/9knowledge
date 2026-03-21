@@ -24,5 +24,6 @@ then
 	exit 1
 fi
 
+echo "url: $url"
 curldl "$url"
 
