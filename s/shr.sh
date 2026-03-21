@@ -21,7 +21,11 @@ curls() {
 curldl() {
 	wstring='download completed!\n  size: %{size_download} B\n  time: %{time_total} seconds\n  avg speed: %{speed_download} B/s\n  exit status: %{exitcode}\n  error msg (none if blank): %{errormsg}\n'
 	args="--remove-on-error -O"
-	curl $args -w "$wstring" "$@"
+	for url
+	do
+		echo "url: $url"
+		curl $args -w "$wstring" "$url"
+	done
 }
 
 # like grep -o but posix-compliant

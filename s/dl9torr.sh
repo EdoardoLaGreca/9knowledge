@@ -30,7 +30,6 @@ then
 	exit 1
 fi
 
-echo "url: $durl"
 ckow $(basename $durl) || exit 0
 curldl "$durl"
 
