@@ -10,7 +10,7 @@ My notes about [9front](http://9front.org/).
 
 Despite the warning above, this repository still covers 9front as the preferred "Plan 9 feature set extension" (improperly called so).
 
-**Disclaimer**: Neither me, nor any portion of text present in this repository, is responsible for loss of information, system malfunction or breakage, or physical harm to your computer in any way. The end user is always supposed to be careful and take responsibility for operating their own computer!
+**Disclaimer**: Neither me, nor any portion of text present in this repository, are responsible for loss of information, system malfunction or breakage, physical harm to you or your computer, or any other undesired effect of any kind. Foresight and responsibility are always expected from the end user (who puts in practice what they read in this repository) when operating their own hardware and/or software!
 
 ## What?
 
