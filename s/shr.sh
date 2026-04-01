@@ -68,3 +68,45 @@ ckow() {
 	done
 }
 
+# replace 'http:' with 'https:' in all lines that start with the former in stdin
+http2s() {
+	while read line
+	do
+		echo "$line" | sed 's/^http:/https:/'
+	done
+}
+
+# enumerate lines
+# the `paste` command would be perfect, but with that I need to either create
+# temporary files (ugly) or use process substitution (non-posix)
+enumlns() {
+	i=1
+	while read line
+	do
+		echo "$i) $line"
+		i=$(( $i+1 ))
+	done
+}
+
+# prompt for the selection of a line from those received on stdin and set the
+# `ans` variable to the selected option
+prompt_seln() {
+	max="$1"
+	msg=${2:-"choose an option by index: "}
+	while read -p "$msg" ans
+	do
+		test "$ans" -ge 1 -a "$ans" -le "$max" && break
+	done
+}
+
+# prompt for the selection of a variant and set the `ans` variable to the
+# selected option's text
+prompt_variant() {
+	purl="$1"
+	patt="$2"
+	variants=$(matchall "$purl" "$patt" | xargs -I % basename %)
+	echo "available variants below:"
+	echo "$variants" | enumlns | sed 's/^/  /'
+	prompt_seln $(echo "$variants" | wc -l) "choose a variant by index: "
+	ans=$(echo "$variants" | head -n $ans | tail -n -1)
+}
