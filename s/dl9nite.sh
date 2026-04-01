@@ -17,7 +17,14 @@ ckcurl
 
 echo "searching for the file's url... (might take a while)"
 
-url=$(match "$purl" "${dpath}/9front-[[:digit:]]*\.amd64\.iso\.gz" | sed "s|^|https://$nitedom|")
+# let the user choose a variant
+patt="${dpath}/9front-[[:digit:]]*\.[[:alnum:]]*\.[[:alnum:]]*\.gz"
+prompt_variant "$purl" "$patt"
+echo "you chose: $ans"
+patt="${dpath}/${ans}"
+
+# direct download url
+url=$(match "$purl" "$patt" | sed "s|^|https://$nitedom|")
 if [ -z "$url" ]
 then
 	echo 'cannot find download url' >&2

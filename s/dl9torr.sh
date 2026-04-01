@@ -2,28 +2,35 @@
 
 # Download the latest 9front release torrent file using Curl.
 
+. $(dirname $0)/shr.sh
+
 # Path where the download page is
 ppath='/releases'
 
 # Path for direct download
 dpath='/iso'
 
-. $(dirname $0)/shr.sh
-
 ckcurl
 
 echo "searching for the file's url... (might take a while)"
 
 # latest download page url
-purl=$(match "https://$dom" "http://${dom}${ppath}/[[:digit:]/]*" | sed 's/^http:/https:/')
+patt="http://${dom}${ppath}/[[:digit:]/]*"
+purl=$(match "https://$dom" "$patt" | http2s)
 if [ -z "$purl" ]
 then
 	echo 'cannot find the download page' >&2
 	exit 1
 fi
 
+# let the user choose a variant
+patt="http://${dom}${dpath}/9front-[[:digit:]]*\.[[:alnum:]]*\.[[:alnum:]]*\.gz\.torrent"
+prompt_variant "$purl" "$patt"
+echo "you chose: $ans"
+patt="http://${dom}${dpath}/${ans}"
+
 # direct download url
-durl=$(match "$purl" "http://${dom}${dpath}/9front-[[:digit:]]*\.amd64\.iso\.gz\.torrent" | sed 's/^http:/https:/')
+durl=$(match "$purl" "$patt" | http2s)
 if [ -z "$durl" ]
 then
 	echo 'cannot find the download url' >&2
