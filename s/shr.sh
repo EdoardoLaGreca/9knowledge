@@ -98,14 +98,17 @@ prompt_seln() {
 	done
 }
 
-# prompt for the selection of a variant and set the `ans` variable to the
-# selected option's text
+# prompt for the selection of a variant from an argument containing all of them
+# separated by commas and set the `ans` variable to the selected option's text
 prompt_variant() {
-	purl="$1"
-	patt="$2"
-	variants=$(matchall "$purl" "$patt" | xargs -I % basename %)
+	variants=$(echo "$1" | tr ',' '\n')
 	echo "available variants below:"
 	echo "$variants" | enumlns | sed 's/^/  /'
 	prompt_seln $(echo "$variants" | wc -l) "choose a variant by index: "
 	ans=$(echo "$variants" | head -n $ans | tail -n -1)
+}
+
+# join multiple lines together in a single line with comma-separated values
+joinlns() {
+	tr '\n' ',' | sed 's/,$//'
 }

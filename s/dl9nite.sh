@@ -19,7 +19,8 @@ echo "searching for the file's url... (might take a while)"
 
 # let the user choose a variant
 patt="${dpath}/9front-[[:digit:]]*\.[[:alnum:]]*\.[[:alnum:]]*\.gz"
-prompt_variant "$purl" "$patt"
+variants=$(matchall "$purl" "$patt" | xargs -I % basename % | joinlns)
+prompt_variant "$variants"
 echo "you chose: $ans"
 patt="${dpath}/${ans}"
 

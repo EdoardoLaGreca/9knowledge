@@ -25,7 +25,8 @@ fi
 
 # let the user choose a variant
 patt="http://${dom}${dpath}/9front-[[:digit:]]*\.[[:alnum:]]*\.[[:alnum:]]*\.gz\.torrent"
-prompt_variant "$purl" "$patt"
+variants=$(matchall "$purl" "href=\"$patt\"" | sed 's/^href="//;s/"$//;' | xargs -I % basename % | joinlns)
+prompt_variant "$variants"
 echo "you chose: $ans"
 patt="http://${dom}${dpath}/${ans}"
 
