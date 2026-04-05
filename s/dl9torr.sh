@@ -30,6 +30,13 @@ prompt_variant "$variants"
 echo "you chose: $ans"
 patt="http://${dom}${dpath}/${ans}"
 
+# display variant's checksum
+varfile=$(basename $patt | sed 's/\.torrent$//')
+cksumpatt='[0-9a-f]{64}'
+line=$(match "$purl" "^[[:space:]]*$cksumpatt[[:space:]]*$varfile")
+cksum=$(echo "$line" | xtract "$cksumpatt")
+printf "checksum for $varfile:\n\t$cksum\n"
+
 # direct download url
 durl=$(match "$purl" "$patt" | http2s)
 if [ -z "$durl" ]
