@@ -30,15 +30,14 @@ curldl() {
 
 # like grep -o but posix-compliant
 xtract() {
-	patt="$1"
-	while read line
-	do
-		echo "$line" | grep -Eq "$patt" || continue
-		befaft=$(echo "$line" | sed "s|$patt|\n|")
-		bef=$(echo "$befaft" | head -n 1)
-		aft=$(echo "$befaft" | tail -n 1)
-		echo "$line" | sed "s|^$bef||;s|$aft\$||"
-	done
+	patt=$(echo "$1" | sed 's|/|\\/|g')
+	awkprog='{
+		while(match($0,/'"$patt"'/)){
+			print substr($0,RSTART,RLENGTH)
+			$0=substr($0,RSTART+RLENGTH)
+		}
+	}'
+	awk "$awkprog"
 }
 
 # find all matches in a web page
