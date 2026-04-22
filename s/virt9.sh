@@ -97,7 +97,7 @@ qemu-system-x86_64 \
 	-machine q35 \
 	-cpu host \
 	-smp $smp \
-	-m 2048M \
+	-m $mem \
 	-accel kvm \
 	-device intel-iommu \
 	-vga $vga \
