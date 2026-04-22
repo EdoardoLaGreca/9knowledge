@@ -57,6 +57,12 @@ fi
 smp=$(( $(nproc) / 4 ))
 test $smp -lt 1 && smp=1
 
+# memory given to the vm
+# (1/4 of the available memory floored to the nearest power of 2)
+mem_avail=$(free --mega | awk '{ print $7 }' | sed '/^$/ d')
+mem=$(echo "scale=4; memlog = l($mem_avail / 4) / l(2); scale=0; memlog /= 1; 2^memlog" | bc -l)
+mem=$mem'M'
+
 printvar disk iso vga display spice smp mem
 
 # Options and arguments summed up:
