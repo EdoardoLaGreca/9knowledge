@@ -37,6 +37,14 @@ ckprogs() {
 	return 0
 }
 
+printvar() {
+	for v
+	do
+		printf "$v=%b " $(eval echo '$'$v)
+	done
+	echo
+}
+
 ckprogs nproc || exit 1
 
 if [ $# -eq 0 ]
@@ -48,6 +56,8 @@ fi
 # cores given to the vm
 smp=$(( $(nproc) / 4 ))
 test $smp -lt 1 && smp=1
+
+printvar disk iso vga display spice smp mem
 
 # Options and arguments summed up:
 #	-machine
