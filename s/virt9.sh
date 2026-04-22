@@ -1,8 +1,9 @@
 #! /bin/sh
 
 # Start a 9front virtual machine using QEMU on GNU/Linux. Specify the path to
-# the internal disk image to use as first argument. An ISO disk image may be
-# specified as first argument.
+# the main disk image as first argument. An ISO image may be specified as second
+# argument.
+# 	./virt9.sh disk-image.img [ cd-image.iso ]
 # To create a disk image, use:
 # 	qemu-img create -f qcow2 <name>.img <size>G
 
