@@ -34,6 +34,7 @@ ckprogs() {
 		fi
 	done
 	test $not_found -eq 1 && return 1
+	return 0
 }
 
 ckprogs nproc || exit 1
