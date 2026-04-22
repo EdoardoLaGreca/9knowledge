@@ -1,15 +1,42 @@
 #! /bin/sh
 
-# Start a 9front virtual machine using QEMU. Specify the path to the internal
-# disk image to use as first argument. An ISO disk image may be specified as
-# first argument.
+# Start a 9front virtual machine using QEMU on GNU/Linux. Specify the path to
+# the internal disk image to use as first argument. An ISO disk image may be
+# specified as first argument.
 # To create a disk image, use:
 # 	qemu-img create -f qcow2 <name>.img <size>G
 
-# you may want to assign these two variables below to known paths in your
-# filesystem, to save some time and effort
+# You may want to assign these two variables below to known paths in your file
+# system, to save some time and effort.
 disk=$1
 iso=$2
+
+# Values for QEMU's respective '-display' and '-vga' options, with an additional
+# option for '-spice' if display=none.
+# Suggested values:
+# 	Local use  -> vga=std display=gtk spice=
+# 	Remote use -> vga=qxl display=none spice=...
+vga=std
+display=gtk
+spice=
+
+# ---- end of customisation variables ----
+
+# check existence of programs
+ckprogs() {
+	not_found=0
+	for u
+	do
+		if ! which $u
+		then
+			echo "$u not found, make sure it is installed" >&2
+			not_found=1
+		fi
+	done
+	test $not_found -eq 1 && return 1
+}
+
+ckprogs nproc || exit 1
 
 if [ $# -eq 0 ]
 then
@@ -17,11 +44,9 @@ then
 	exit 1
 fi
 
-if [ -n "$iso" ]
-then
-	cdrom="-cdrom $iso -boot dc"
-fi
-
+# cores given to the vm
+smp=$(( $(nproc) / 4 ))
+test $smp -lt 1 && smp=1
 
 # Options and arguments summed up:
 #	-machine
@@ -30,10 +55,10 @@ fi
 #		number of cpu cores
 #	-m
 #		primary memory size
-#	-hda
-#		internal disk image
+#	-hda, -drive
+#		virtual hard drive
 #	-cdrom
-#		external disk image
+#		virtual optical drive (typically for ISO disk images)
 #	-boot
 #		boot order
 #	-vga
@@ -43,17 +68,25 @@ fi
 #	-usb
 #		add a uhci controller
 #	-nic, -netdev
-#		network configuration
+#		network backend configuration
 #	-device
 #		configuration for any device
-# for more, see https://wiki.gentoo.org/wiki/QEMU/Options
+# for more, see:
+#	https://www.qemu.org/docs/master/system/index.html
+#	https://wiki.archlinux.org/title/QEMU
+#	https://wiki.gentoo.org/wiki/QEMU/Options
 qemu-system-x86_64 \
-	-machine type=q35 \
-	-smp 2 \
+	-machine q35 \
+	-cpu host \
+	-smp $smp \
 	-m 2048M \
-	-hda $disk \
-	$cdrom \
-	-vga std \
+	-accel kvm \
+	-device intel-iommu \
+	-vga $vga \
+	-display $display \
+	${spice:+-spice $spice} \
 	-k en-us \
-	-netdev user,id=eth0,net=192.168.9.0/24,dhcpstart=192.168.9.1 -device driver=virtio-net,netdev=eth0 \
-#	-device virtio-net,netdev=vmnic -netdev tap,id=vmnic,ifname=vnet0,script=no,downscript=no \
+	-drive file=$disk,if=virtio \
+	${iso:+-cdrom $iso -boot order=dc} \
+	-nic user,model=virtio-net-pci
+
