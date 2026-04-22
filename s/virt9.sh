@@ -27,7 +27,7 @@ ckprogs() {
 	not_found=0
 	for u
 	do
-		if ! which $u
+		if ! which $u >/dev/null
 		then
 			echo "$u not found, make sure it is installed" >&2
 			not_found=1
