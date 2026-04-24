@@ -12,15 +12,6 @@
 disk=$1
 iso=$2
 
-# Values for QEMU's respective '-display' and '-vga' options, with an additional
-# option for '-spice' if display=none.
-# Suggested values:
-# 	Local use  -> vga=std display=gtk spice=
-# 	Remote use -> vga=qxl display=none spice=...
-vga=std
-display=gtk
-spice=
-
 # ---- end of customisation variables ----
 
 # check existence of programs
@@ -100,9 +91,8 @@ qemu-system-x86_64 \
 	-m $mem \
 	-accel kvm \
 	-device intel-iommu \
-	-vga $vga \
-	-display $display \
-	${spice:+-spice $spice} \
+	-vga std \
+	-display gtk \
 	-k en-us \
 	-drive file=$disk,if=virtio \
 	${iso:+-cdrom $iso -boot order=dc} \
