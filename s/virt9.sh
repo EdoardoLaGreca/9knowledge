@@ -6,6 +6,9 @@
 # 	./virt9.sh disk-image.img [ cd-image.iso ]
 # To create a disk image, use:
 # 	qemu-img create -f qcow2 <name>.img <size>G
+# This script intentionally leaves out non-essential features, such as audio,
+# and only focuses on the emulation of CPU/motherboard/SoC, basic graphics, and
+# networking.
 
 # You may want to assign these two variables below to known paths in your file
 # system, to save some time and effort.
