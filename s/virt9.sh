@@ -15,7 +15,16 @@
 disk=$1
 iso=$2
 
-# ---- end of customisation variables ----
+# Below, some customisable variables for QEMU's options. Variables are typically
+# used for QEMU's options with the same name. They are the most useful when used
+# upon this script's invocation.
+
+# ---- begin variables ----
+
+# Use 'none' for no display output.
+display=${display:-gtk}
+
+# ---- end variables ----
 
 # check existence of programs
 ckprogs() {
@@ -58,7 +67,7 @@ mem_avail=$(free --mega | awk '{ print $7 }' | sed '/^$/ d')
 mem=$(echo "scale=4; memlog = l($mem_avail / 4) / l(2); scale=0; memlog /= 1; 2^memlog" | bc -l)
 mem=$mem'M'
 
-printvar disk iso vga display spice smp mem
+printvar disk iso vga display smp mem
 
 # Options and arguments summed up:
 #	-machine
@@ -75,6 +84,8 @@ printvar disk iso vga display spice smp mem
 #		boot order
 #	-vga
 #		graphics card
+#	-display
+#		display output
 #	-k
 #		keyboard layout
 #	-usb
@@ -95,7 +106,7 @@ qemu-system-x86_64 \
 	-accel kvm \
 	-device intel-iommu \
 	-vga std \
-	-display gtk \
+	-display $display \
 	-k en-us \
 	-drive file=$disk,if=virtio \
 	${iso:+-cdrom $iso -boot order=dc} \
