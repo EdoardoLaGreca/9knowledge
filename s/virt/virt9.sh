@@ -25,23 +25,22 @@
 disk=$1
 iso=$2
 
+uname=$(uname)
+if [ $uname = Linux ]
+then
+	os=linux
+elif echo $uname | grep '.*BSD'
+then
+	os=bsd
+else
+	echo 'unsupported os' >&2
+	exit 1
+fi
+. $(dirname $0)/$os.sh
+test $? -eq 0 || exit 1
+
 # Use 'none' for no display output.
 display=${display:-gtk}
-
-# check existence of programs
-ckprogs() {
-	not_found=0
-	for u
-	do
-		if ! which $u >/dev/null
-		then
-			echo "$u not found, make sure it is installed" >&2
-			not_found=1
-		fi
-	done
-	test $not_found -eq 1 && return 1
-	return 0
-}
 
 printvar() {
 	for v
@@ -50,8 +49,6 @@ printvar() {
 	done
 	echo
 }
-
-ckprogs nproc || exit 1
 
 if [ $# -eq 0 ]
 then
@@ -62,61 +59,19 @@ fi
 # cores given to the vm
 if [ ! $smp ]
 then
-	smp=$(( $(nproc) / 4 ))
+	smp=$(( $(ncpu) / 4 ))
 	test $smp -lt 1 && smp=1
 fi
 
 # memory given to the vm
 if [ ! $mem ]
 then
-	# (1/4 of the available memory floored to the nearest power of 2)
-	mem_avail=$(free --mega | awk '{ print $7 }' | sed '/^$/ d')
-	mem=$(echo "scale=4; memlog = l($mem_avail / 4) / l(2); scale=0; memlog /= 1; 2^memlog" | bc -l)
+	# 1/4 of total memory floored to the nearest power of 2
+	mem=$(echo "scale=4; memlog = l($(totalmem) / 4) / l(2); scale=0; memlog /= 1; 2^memlog" | bc -l)
 	mem=$mem'M'
 fi
 
-printvar disk iso display smp mem
+printvar uname disk iso display smp mem
 
-# Options and arguments summed up:
-#	-machine
-#		hardware type, acceleration, etc.
-#	-smp
-#		number of cpu cores
-#	-m
-#		primary memory size
-#	-hda, -drive
-#		virtual hard drive
-#	-cdrom
-#		virtual optical drive (typically for ISO disk images)
-#	-boot
-#		boot order
-#	-vga
-#		graphics card
-#	-display
-#		display output
-#	-k
-#		keyboard layout
-#	-usb
-#		add a uhci controller
-#	-nic, -netdev
-#		network backend configuration
-#	-device
-#		configuration for any device
-# for more, see:
-#	https://www.qemu.org/docs/master/system/index.html
-#	https://wiki.archlinux.org/title/QEMU
-#	https://wiki.gentoo.org/wiki/QEMU/Options
-qemu-system-x86_64 \
-	-machine q35 \
-	-cpu host \
-	-smp $smp \
-	-m $mem \
-	-accel kvm \
-	-device intel-iommu \
-	-vga std \
-	-display $display \
-	-k en-us \
-	-drive file=$disk,if=virtio \
-	${iso:+-cdrom $iso -boot order=dc} \
-	-nic user,model=virtio-net-pci
+virt9
 
