@@ -20,7 +20,7 @@ menuentry "9front" {
 }
 ```
 
-After writing the entry, remember to save the file and update the GRUB bootloader with the new configuration. Some operating systems have a script for that, others require to run a whole command by hand. It should be documented in your operating system's GRUB manual page.
+After writing the entry, remember to save the file and update the GRUB bootloader with the new configuration. Some operating systems have a script for that, others require to run `grub-mkconfig` by hand.
 
 ## BIOS
 
