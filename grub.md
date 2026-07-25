@@ -22,6 +22,18 @@ menuentry "9front" {
 
 After writing the entry, remember to save the file and update the GRUB bootloader with the new configuration. Some operating systems have a script for that, others require to run `grub-mkconfig` by hand.
 
+### The displayed resolution doesn't match the screen resolution when 9front boots
+
+This can be solved by adding the following 3 lines anywhere before the `chainloader` line in the `menuentry` section above. `gfxmode` should be set to your screen resolution instead of `1920x1080`.
+
+```
+terminal_output console
+set gfxmode=1920x1080
+terminal_output gfxterm
+```
+
+Remember to update the bootloader with the command I mentioned earlier.
+
 ## BIOS
 
 (to do)
