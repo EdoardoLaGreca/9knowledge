@@ -38,16 +38,16 @@ virt9() {
 	#	https://wiki.archlinux.org/title/QEMU
 	#	https://wiki.gentoo.org/wiki/QEMU/Options
 	qemu-system-x86_64 \
-		-machine q35 \
 		-cpu host \
 		-smp $smp \
 		-m $mem \
+		-machine q35 \
 		-accel kvm \
-		-device intel-iommu \
-		-vga std \
-		-display $display \
-		-k en-us \
-		-drive file=$disk,if=virtio \
+		-blockdev driver=$diskfmt,file=$disk,read-only=$ro,node-name=maindisk \
+		-device virtio-blk,drive=maindisk
 		${iso:+-cdrom $iso -boot order=dc} \
 		-nic user,model=virtio-net-pci
+		-vga std \
+		-display sdl \
+		-k en-us \
 }
