@@ -65,6 +65,16 @@ then
 	mem=$mem'M'
 fi
 
+# disk format
+if [ ! $diskfmt ]
+then
+	case $disk in
+	(/dev/*)	diskfmt=raw ;;
+	(*.qcow2)	diskfmt=qcow2 ;;
+	(*)		diskfmt=qcow2 ;;
+	esac
+fi
+
 printvar os disk diskfmt ro iso smp mem
 
 echo "$0: starting hypervisor..." >&2
