@@ -30,11 +30,17 @@ elif echo $uname | grep '[a-zA-Z0-9]*BSD'
 then
 	os=bsd
 else
-	echo 'unsupported os' >&2
+	echo "$0: unsupported os" >&2
 	exit 1
 fi
 . $(dirname $0)/$os.sh
 test $? -eq 0 || exit 1
+
+if [ ! $disk ] && [ ! $iso ]
+then
+	echo "$0: neither disk nor iso image specified" >&2
+	exit 1
+fi
 
 printvar() {
 	for v
@@ -61,5 +67,6 @@ fi
 
 printvar os disk diskfmt ro iso smp mem
 
+echo "$0: starting hypervisor..." >&2
 virt9
 
