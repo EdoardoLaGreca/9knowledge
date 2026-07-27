@@ -2,26 +2,31 @@
 
 # usage: ./virt9.sh
 # Start a 9front virtual machine.
-# This script provides some degree of customisation through environment
+#
+# This script provides some degree of customisation through a set of environment
 # variables. It is suggested to pass them to the script using the prefix syntax,
 # i.e.:
-#	name1=value1 [ name2=value2 ... ] ./virt9.sh
-# The variables are:
+#	[ name=value ... ] ./virt9.sh
+# The variables in use are:
 # - `disk`: path to main bootable disk storage, like a file or block device
 # - `diskfmt`: main bootable disk format (qcow2 or raw)
 # - `ro`: boolean value (yes/no) to make the main disk read-only
 # - `iso`: optional installation ISO image
 # - `smp`: the amount of CPUs assigned in multi-core environments
 # - `mem`: the amount of volatile memory allocated
-# Once everything is set up and just before launching the hypervisor, all
-# customisable variables are printed to standard output with their respective
+# Almost all variables have a default value, so they can be omitted. The only
+# two that don't are `disk` and `iso`, of which at least one should always be
+# defined
+#
+# Once everything is set up and just before launching the hypervisor, all the
+# variables above are printed to standard output with their respective
 # values in a familiar syntax.
 
 uname=$(uname)
 if [ $uname = Linux ]
 then
 	os=linux
-elif echo $uname | grep '.*BSD'
+elif echo $uname | grep '[a-zA-Z0-9]*BSD'
 then
 	os=bsd
 else
