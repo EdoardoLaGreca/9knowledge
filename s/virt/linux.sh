@@ -46,8 +46,8 @@ virt9() {
 		-blockdev driver=$diskfmt,file=$disk,read-only=$ro,node-name=maindisk \
 		-device virtio-blk,drive=maindisk
 		${iso:+-cdrom $iso -boot order=dc} \
-		-nic user,model=virtio-net-pci
+		-nic user,model=virtio-net-pci \
 		-vga std \
 		-display sdl \
-		-k en-us \
+		-k en-us
 }
