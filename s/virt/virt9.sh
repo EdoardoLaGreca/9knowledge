@@ -9,7 +9,7 @@
 # The variables are:
 # - `disk`: path to main bootable disk storage, like a file or block device
 # - `diskfmt`: main bootable disk format (qcow2 or raw)
-# - `ro`: boolean value (on/off) to make the main disk read-only
+# - `ro`: boolean value (yes/no) to make the main disk read-only
 # - `iso`: optional installation ISO image
 # - `smp`: the amount of CPUs assigned in multi-core environments
 # - `mem`: the amount of volatile memory allocated

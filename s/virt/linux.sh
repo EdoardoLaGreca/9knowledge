@@ -8,6 +8,8 @@ totalmem() {
 }
 
 virt9() {
+
+	test $ro = 'yes' && roqemu=on || roqemu=off
 	# Options and arguments summed up:
 	#	-machine
 	#		hardware type, acceleration, etc.
@@ -43,7 +45,7 @@ virt9() {
 		-m $mem \
 		-machine q35 \
 		-accel kvm \
-		-blockdev driver=$diskfmt,file=$disk,read-only=$ro,node-name=maindisk \
+		-blockdev driver=$diskfmt,file=$disk,read-only=$roqemu,node-name=maindisk \
 		-device virtio-blk,drive=maindisk
 		${iso:+-cdrom $iso -boot order=dc} \
 		-nic user,model=virtio-net-pci \
