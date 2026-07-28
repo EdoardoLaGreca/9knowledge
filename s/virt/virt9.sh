@@ -23,16 +23,12 @@
 # values in a familiar syntax.
 
 uname=$(uname)
-if [ $uname = Linux ]
-then
-	os=linux
-elif echo $uname | grep '[a-zA-Z0-9]*BSD'
-then
-	os=bsd
-else
-	echo "$0: unsupported os" >&2
-	exit 1
-fi
+case $uname in
+(Linux)		os=linux ;;
+(FreeBSD)	os=freebsd ;;
+(OpenBSD)	os=openbsd ;;
+(*)		echo "$0: unsupported os" >&2 ; exit 1 ;;
+esac
 . $(dirname $0)/$os.sh
 test $? -eq 0 || exit 1
 
